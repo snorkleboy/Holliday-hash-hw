@@ -18,6 +18,7 @@ describe LinkedList do
 
   describe "#empty" do
     it "checks whether any nodes have been inserted" do
+      p list
       expect(empty_list.empty?).to be true
       expect(list.empty?).to be false
     end
