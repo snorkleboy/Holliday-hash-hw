@@ -5,7 +5,7 @@ class LRUCache
   attr_reader :count
   def initialize(max, prc)
     @map = HashMap.new
-    @store = LinkedList.new
+    @store = []
     @max = max
     @prc = prc
   end
@@ -25,6 +25,17 @@ class LRUCache
 
   def calc!(key)
     # suggested helper method; insert an (un-cached) key
+    p 'start'
+    if(@map.include?(key))
+      p 'here'
+      return @store.get[key]
+    else
+      val = prc(key)
+      @store.push(key:val)
+      p @store
+      return val
+    end
+    
   end
 
   def update_node!(node)
@@ -32,5 +43,6 @@ class LRUCache
   end
 
   def eject!
+    @store.pop
   end
 end
