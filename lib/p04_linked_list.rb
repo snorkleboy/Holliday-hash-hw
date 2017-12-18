@@ -54,7 +54,7 @@ class LinkedList
               end
             end
       end
-      false    
+      nil    
   end
   def get(key)
       if (@length>0)
@@ -67,7 +67,7 @@ class LinkedList
               end
             end
       end
-      false    
+      nil    
   end
 
   def include?(key)
